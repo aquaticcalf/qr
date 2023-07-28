@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qr</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://aquaticcalf.github.io/assets/sam.png" type="image/x-icon">
+</head>
+<body>
+    <h1>qr code generator</h1>
+    <form action="/" method="post">
+        <label for="data">enter the data you want to encode:</label><br>
+        <input type="text" id="data" name="data" required><br>
+        <input type="submit" value="generate qr code">
+    </form>
+    {% if qr_code %}
+    <img src="data:image/png;base64,{{ qr_code }}" alt="QR code">
+    {% endif %}
+</body>
+</html>
