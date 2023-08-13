@@ -4,84 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>qr</title>
-    <link rel="shortcut icon" href="https://aquaticcalf.github.io/assets/sam.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://aquaticcalf.github.io/sam.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://aquaticcalf.github.io/comic.css">
+    <link rel="stylesheet" href="https://aquaticcalf.github.io/cowbull/rainbow.css">
     <style>
-        @font-face {
-            font-family: comic;
-            src: url('https://aquaticcalf.github.io/assets/comic.ttf');
-        }
-        body {
-            font-family: comic;
-            background-color: #2a2a2a;
-            color: #cecaca;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            color: #cecaca;
-            margin: 10px;
-        }
-
-        form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        label {
-            margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            padding: 8px;
-            font-size: 16px;
-            border: 1px solid blue;
-            border-radius: 10px;
-            width: 300px;
-            max-width: 90vw;
-            margin: 0 10px;
-            text-align: center;
-        }
-
-        input[type="submit"] {
-            margin-top: 10px;
-            padding: 8px 20px;
-            font-size: 16px;
-            background-color: gold;
-            color: black;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            transition: color 0.2s ease;
-        }
-
-        input[type="submit"]:hover {
-            color: rgb(255, 255, 255);
-            background-color: rgb(183, 155, 0);
-        }
-
         img {
             margin-top: 20px;
             max-width: 300px;
             border: 2px solid #333;
         }
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>qr code generator</h1>
-    <form action="/" method="post">
-        <label for="data">enter the data you want to encode:</label><br>
-        <input type="text" id="data" name="data" required><br>
-        <input type="submit" value="generate qr code">
+<body class="bg-black text-white">
+    <div class="text-4xl text-center m-5 mb-3">qr code generator</div>
+    <hr class="m-5 border-[#3f3f41]">
+    <form class="flex flex-col max-w-[400px] m-auto p-2" action="/" method="post">
+        <label for="data" class="text-2xl text-center m-3 rainbow">enter the data you want to encode:</label><br>
+        <input type="text" id="data" name="data" class="p-2 block rounded-xl border border-[#ffb3ff] px-3 text-sm font-medium bg-gray-900 text-white" required><br>
+        <input type="submit" value="generate qr code" class="bg-gray-900 rounded-xl p-2 max-w-[200px] m-auto">
     </form>
-    {% if qr_code %}
-    <img src="data:image/png;base64,{{ qr_code }}" alt="QR code">
-    {% endif %}
+    <div class="flex justify-center m-5">
+        {% if qr_code %}
+        <img src="data:image/png;base64,{{ qr_code }}" alt="qr code">
+        {% endif %}
+    </div>
 </body>
 </html>
