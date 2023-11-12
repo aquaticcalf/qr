@@ -16,13 +16,13 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white min-h-screen">
     <div class="text-4xl text-center m-5 mb-3">qr code generator</div>
     <hr class="m-5 border-[#3f3f41]">
     <form class="flex flex-col max-w-[400px] m-auto p-2" action="/" method="post">
         <label for="data" class="text-2xl text-center m-3 rainbow">enter the data you want to encode:</label><br>
-        <input type="text" id="data" name="data" class="p-2 block rounded-xl border border-[#ffb3ff] px-3 text-sm font-medium bg-gray-900 text-white" required><br>
-        <input type="submit" value="generate qr code" class="bg-gray-900 rounded-xl p-2 max-w-[200px] m-auto hover:cursor-pointer">
+        <input type="text" id="data" name="data" class="p-2 block rounded-xl border border-[#af8fe3] px-3 text-sm font-medium bg-gray-900 text-white" required><br>
+        <input type="submit" value="generate qr code" class="border-2 border-[#af8fe3] text-[#af8fe3] rounded-xl flex justify-center items-center hover:bg-[#af8fe3] hover:text-black p-2 max-w-[200px] m-auto hover:cursor-pointer">
     </form>
     <div class="flex justify-center m-5">
         {% if qr_code %}
